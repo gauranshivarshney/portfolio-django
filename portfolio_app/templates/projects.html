@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .work-section {
+        padding: 60px 80px;
+        font-family: 'Segoe UI', sans-serif;
+        background: #f9f9f9;
+    }
+
+    .tag-line {
+        font-size: 45px;
+        margin-bottom: 30px;
+    }
+
+    .name {
+        color: rgb(143, 36, 79);
+        font-weight: bold;
+    }
+
+    .work-heading {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        color: #111;
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .project-card {
+        border-radius: 12px;
+        padding: 20px 20px 10px;
+        background-color: #e3fcef; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .project-header i.fa-folder {
+        font-size: 24px;
+        color: #333;
+    }
+
+    .project-links i,
+    .project-links img {
+        font-size: 18px;
+        margin-left: 12px;
+        color: #222;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+
+    .project-title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: #111;
+    }
+
+    .project-description {
+        font-size: 14px;
+        color: #444;
+        margin-bottom: 12px;
+    }
+
+    .tech-stack {
+        font-weight: 600;
+        font-size: 13px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        color: #000;
+    }
+
+    .bg-green { background-color: #a0f0dc; }
+    .bg-blue { background-color: #a6d8ff; }
+    .bg-yellow { background-color: #ffe680; }
+    .bg-purple { background-color: #e7c6ff; }
+
+</style>
+
+<section class="work-section">
+    <p class="tag-line">
+        &lt;h1&gt;<span class="name">My Work</span>&lt;/h1&gt;
+    </p>
+    <p class="work-heading">Full Stack Projects <i class="fas fa-desktop"></i></p>
+    <div class="project-grid">
+        <div class="project-card bg-green">
+            <div class="project-header">
+                <i class="fas fa-folder"></i>
+                <div class="project-links">
+                    <a href="https://github.com/gauranshivarshney/jaisweet-frontend" target="_blank"><img src="{% static 'images/github.png' %}" alt="GitHub"></a>
+                    <a href="https://jaisweet-frontend.vercel.app/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <h3 class="project-title">E-Commerce Website (Sweets + Restaurants)</h3>
+            <p class="project-description">
+                JaiSweet is a modern, responsive frontend for an e-commerce platform focused on sweets and restaurant items. Built with love and sugar, this platform helps users browse, filter, and order a wide variety of delicious items from nearby restaurants or sweet shops.
+            </p>
+            <div class="tech-stack">
+                <span>ReactJS</span>
+                <span>NodeJs</span>
+                <span>Tailwind CSS</span>
+                <span>MongoDB</span>
+            </div>
+        </div>
+        <div class="project-card bg-blue">
+            <div class="project-header">
+                <i class="fas fa-folder"></i>
+                <div class="project-links">
+                    <a href="https://github.com/gauranshivarshney/CanvasConnect" target="_blank"><img src="{% static 'images/github.png' %}" alt="GitHub"></a>
+                    <a href="https://canvasconnect-efjb.onrender.com" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <h3 class="project-title">Canvas Connect - A Social Art Sharing Platform</h3>
+            <p class="project-description">
+                Canvas Connect is a minimalist social media web application inspired by Instagram, designed specifically for art lovers and creators. It enables users to share their artwork, engage with the community, and showcase their creative expressions through posts.
+            </p>
+            <div class="tech-stack">
+                <span>NodeJS</span>
+                <span>Express</span>
+                <span>MongoDB</span>
+            </div>
+        </div>
+        <div class="project-card bg-yellow">
+            <div class="project-header">
+                <i class="fas fa-folder"></i>
+                <div class="project-links">
+                    <a href="https://github.com/gauranshivarshney/ToDo-React" target="_blank"><img src="{% static 'images/github.png' %}" alt="GitHub"></a>
+                    <a href="https://to-do-react-wheat-seven.vercel.app/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <h3 class="project-title">To Do Website</h3>
+            <p class="project-description">
+                A simple React-based Todo application that allows users to manage their tasks effectively. The app includes features for adding, completing, editing, and deleting tasks, with persistent storage using localStorage.
+            </p>
+            <div class="tech-stack">
+                <span>React</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+    </div>
+    <p class="work-heading">Python Projects <i class="fas fa-desktop"></i></p>
+    <div class="project-grid">
+        <div class="project-card bg-green">
+            <div class="project-header">
+                <i class="fas fa-folder"></i>
+                <div class="project-links">
+                    <a href="https://github.com/gauranshivarshney/studentportal" target="_blank"><img src="{% static 'images/github.png' %}" alt="GitHub"></a>
+                    <a href="https://studentportal-g9r0.onrender.com/" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <h3 class="project-title">Student Study Portal</h3>
+            <p class="project-description">
+                A comprehensive web-based Student Study Portal built using Django that helps students manage and access their daily study resources and tasks efficiently. The portal includes features like To-Do lists, Homework Tracker, Notes, Books, Wikipedia Search, Dictionary, and user authentication system.
+            </p>
+            <div class="tech-stack">
+                <span>Django</span>
+                <span>HTML/CSS</span>
+                <span>Bootstrap</span>
+                <span>SQLite</span>
+            </div>
+        </div>
+        <div class="project-card bg-blue">
+            <div class="project-header">
+                <i class="fas fa-folder"></i>
+                <div class="project-links">
+                    <a href="https://github.com/gauranshivarshney/MultidiseasePrediction" target="_blank"><img src="{% static 'images/github.png' %}" alt="GitHub"></a>
+                </div>
+            </div>
+            <h3 class="project-title">Multidisease Prediction</h3>
+            <p class="project-description">
+                A machine learning application for predicting multiple diseases based on user input symptoms. Built using Python with libraries such as Scikit-Learn and Flask, and integrates with a web frontend.
+            </p>
+            <div class="tech-stack">
+                <span>HTML/CSS</span>
+                <span>Scikit-Learn</span>
+                <span>Pandas</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

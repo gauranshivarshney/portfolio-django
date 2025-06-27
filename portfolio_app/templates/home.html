@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .home-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 80px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .home-section div {
+        flex: 1;
+    }
+
+    .tag-line {
+        font-size: 45px;
+        color: black;
+        font-weight: 600;
+    }
+
+    .name {
+        color: rgb(143, 36, 79);
+        font-weight: bold;
+    }
+
+    .home-section h2 {
+        font-size: 32px;
+        color: black;
+        margin: 5px 0;
+    }
+
+    .home-section h3 {
+        font-size: 20px;
+        color: #777;
+        margin: 15px 0;
+    }
+
+    button {
+        padding: 12px 30px;
+        font-size: 16px;
+        background: linear-gradient(135deg, rgb(143, 36, 79), rgb(50, 50, 50));
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+        background: linear-gradient(135deg, rgb(173, 56, 99), rgb(70, 70, 70));
+        transform: translateY(-2px);
+    }
+
+    .home-section img {
+        width: 100%;
+        max-width: 450px;
+        max-height: 450px;
+        object-fit: contain;
+        animation: float 3s ease-in-out infinite;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .social-icons {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .social-icons a {
+        margin-right: 20px;
+        font-size: 30px;
+        color: rgb(50, 50, 50);
+    }
+
+    .social-icons img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .social-icons a:hover {
+        transform: translateY(-2px);
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+        .home-section {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .home-section div {
+            margin-bottom: 30px;
+        }
+
+        .home-section img {
+            width: 70%;
+            max-width: 300px;
+            height: auto;
+            margin: 0 auto;
+        }
+    }
+</style>
+
+<section class="home-section">
+    <div>
+        <h2>Hi, I'm</h2>
+        <p class="tag-line">
+            &lt;h1&gt;<span class="name">Gauranshi</span>&lt;/h1&gt;
+        </p>
+        <h2>Full Stack Developer</h2>
+        <h3>Full Stack Developer | Python Developer | Web Developer</h3>
+        <a href="/contact">
+            <button>Contact Me</button>
+        </a>
+        <div class="social-icons">
+            <a href="https://github.com/gauranshivarshney" target="_blank">
+                <img src="{% static 'images/github.png'%}" />
+            </a>
+            <a href="https://www.linkedin.com/in/gauranshi-varshney-01b64a233/" target="_blank">
+                <img src="{% static 'images/linkedin.png'%}" />
+            </a>
+            <a href="https://leetcode.com/u/gauranshivarshney/" target="_blank">
+                <img src="{% static 'images/code.png'%}" />
+            </a>
+        </div>
+    </div>
+    <div>
+        <img src="{% static 'images/home.png' %}" alt="Home Image" />
+    </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .about-section {
+        padding: 60px 80px;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .tag-line {
+        font-size: 45px;
+        margin-bottom: 30px;
+    }
+
+    .name {
+        color: rgb(143, 36, 79);
+        font-weight: bold;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .info-card {
+        width: 280px;
+        transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .info-card img {
+        display: block;
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+    }
+
+    .info-card h4 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: rgb(111, 4, 75);
+    }
+
+    .info-card p {
+        font-size: 16px;
+        color: #444;
+        line-height: 1.5;
+    }
+
+    .experience-section {
+        margin-top: 60px;
+    }
+
+    .experience-title {
+        font-size: 32px;
+        color: rgb(111, 4, 75);
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    .experience-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .experience-item {
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-left: 5px solid rgb(143, 36, 79);
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .experience-item h5 {
+        margin: 0 0 5px;
+        color: rgb(90, 2, 55);
+        font-weight: bold;
+    }
+
+    .experience-company {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 10px;
+    }
+
+    .skills-section {
+        margin-top: 60px;
+        background: linear-gradient(to right, #f9f9f9, #fdfdfd);
+        border-radius: 16px;
+    }
+
+    .skills-section h2 {
+        font-size: 32px;
+        color: rgb(111, 4, 75);
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .skills-section p {
+        color: #555;
+        margin-bottom: 30px;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 30px;
+    }
+
+    .skill-item {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        padding: 20px 10px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(200, 200, 200, 0.3);
+    }
+
+    .skill-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(143, 36, 79, 0.2);
+    }
+
+    .skill-item img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        background-color: white;
+        padding: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .skill-item p {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .tag-line {
+            font-size: 32px;
+            text-align: center;
+        }
+    }
+</style>
+
+<section class="about-section">
+    <div>
+        <p class="tag-line">
+            &lt;h1&gt;<span class="name">About Me</span>&lt;/h1&gt;
+        </p>
+        <div class="card-container">
+            <div class="info-card">
+                <img src="{% static 'images/i1.png' %}" alt="Full Stack Icon">
+                <h4>Full Stack Developer</h4>
+                <p>Full Stack Developer with experience in both frontend and backend development of web applications.</p>
+            </div>
+            <div class="info-card">
+                <img src="{% static 'images/i2.png' %}" alt="Python Icon">
+                <h4>Python Developer</h4>
+                <p>I specialize in Python-based backend development, scripting, and automation.</p>
+            </div>
+            <div class="info-card">
+                <img src="{% static 'images/i3.png' %}" alt="Web Icon">
+                <h4>Web Developer</h4>
+                <p>I design and develop modern websites with clean UI and smooth functionality.</p>
+            </div>
+        </div>
+        <div class="experience-section">
+            <h2 class="experience-title">Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <h5>Frontend Developer Intern</h5>
+                    <p class="experience-company">IIT Delhi | Oct 2024 – Dec 2024</p>
+                    <p>Worked on building and maintaining web applications using React and Node.js, including backend API integrations.</p>
+                </div>
+                <div class="experience-item">
+                    <h5>Web Developer</h5>
+                    <p class="experience-company">Unified Mentor | July 2024 – Aug 2024</p>
+                    <p>Designed and developed UI components for learning platforms using React and Tailwind CSS.</p>
+                </div>
+            </div>
+        </div>
+        <div class="skills-section">
+            <h2>Skills</h2>
+            <p>Here are some of the languages and tools that I use.</p>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <img src="{% static 'images/c++.png' %}">
+                    <p>C++</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/python.png' %}">
+                    <p>Python</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/javascript.png' %}">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/html.png' %}">
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/css.png' %}">
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/react.png' %}">
+                    <p>React</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/django.png' %}">
+                    <p>Django</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/nodejs.png' %}">
+                    <p>NodeJs</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/express.png' %}">
+                    <p>ExpressJs</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/mongodb.png' %}">
+                    <p>MongoDB</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/github.png' %}">
+                    <p>GitHub</p>
+                </div>
+                <div class="skill-item">
+                    <img src="{% static 'images/figma.png' %}">
+                    <p>Figma</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
